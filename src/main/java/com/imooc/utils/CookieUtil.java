@@ -37,11 +37,11 @@ public class CookieUtil {
      * @return
      */
     public static Cookie get(HttpServletRequest request,
-                           String name) {
+                             String name) {
         Map<String, Cookie> cookieMap = readCookieMap(request);
         if (cookieMap.containsKey(name)) {
             return cookieMap.get(name);
-        }else {
+        } else {
             return null;
         }
     }
