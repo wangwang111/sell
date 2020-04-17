@@ -12,10 +12,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-@Configuration
-@EnableTransactionManagement
-@EnableAspectJAutoProxy(exposeProxy=true,proxyTargetClass=true)
-@ComponentScan
+//@Configuration
+//@EnableTransactionManagement
+//@EnableAspectJAutoProxy(exposeProxy=true,proxyTargetClass=true)
+//@ComponentScan
 public class BaseConfiguration {
 
     @Bean(name = "dataSource")

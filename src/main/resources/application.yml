@@ -3,9 +3,10 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql:///sell?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/sell?useSSL=true&serverTimezone=UTC
   jpa:
     show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
   jackson:
     default-property-inclusion: non_null
 #  redis:
@@ -33,7 +34,7 @@ wechat:
   templateId:
     orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
 
-projectUrl:
+project-url:
   wechatMpAuthorize: http://sell.natapp4.cc
   wechatOpenAuthorize: http://sell.natapp4.cc
   sell: http://sell.natapp4.cc
