@@ -42,6 +42,7 @@ public class BuyerOrderController {
     @PostMapping("/create")
     public ResultVO<Map<String, String>> create(@Valid OrderForm orderForm,
                                                 BindingResult bindingResult) {
+        // TODO valid验证
         if (bindingResult.hasErrors()) {
             log.error("【创建订单】参数不正确, orderForm={}", orderForm);
             throw new SellException(ResultEnum.PARAM_ERROR.getCode(),
@@ -73,6 +74,8 @@ public class BuyerOrderController {
         }
 
         PageRequest request = new PageRequest(page, size);
+        // TODO 分页
+        // TODO 返回时间变成时间戳多3个000，添加@JsonSerialize注解
         Page<OrderDTO> orderDTOPage = orderService.findList(openid, request);
 
         return ResultVOUtil.success(orderDTOPage.getContent());
@@ -83,6 +86,7 @@ public class BuyerOrderController {
     @GetMapping("/detail")
     public ResultVO<OrderDTO> detail(@RequestParam("openid") String openid,
                                      @RequestParam("orderId") String orderId) {
+        // 需要权限验证
         OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
         return ResultVOUtil.success(orderDTO);
     }

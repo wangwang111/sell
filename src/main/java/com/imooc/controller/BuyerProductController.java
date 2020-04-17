@@ -34,7 +34,7 @@ public class BuyerProductController {
     private CategoryService categoryService;
 
     @GetMapping("/list")
-    public ResultVO list() {
+    public ResultVO<List<ProductVO>> list() {
         //1. 查询所有的上架商品
         List<ProductInfo> productInfoList = productService.findUpAll();
 

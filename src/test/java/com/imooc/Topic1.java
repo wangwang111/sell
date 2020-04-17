@@ -1,11 +1,20 @@
 package com.imooc;
 
+import org.junit.Test;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Arrays;
+import java.util.List;
 
 public class Topic1 {
+
+    @Test
+    public void test() {
+        List<Integer> list = Arrays.asList(2, 3, 4);
+    }
 
     public static void main(String[] args) throws Exception {
         Topic1 topic1 = new Topic1();

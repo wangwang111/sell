@@ -15,6 +15,7 @@ public class Test {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         return new SqlSessionFactoryBuilder().build(inputStream);
     }
+
     public void test01() throws IOException {
         // 1、获取sqlSessionFactory对象
         SqlSessionFactory sqlSessionFactory = getSqlSessionFactory();
