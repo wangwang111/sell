@@ -1,6 +1,9 @@
 package com.imooc;
 
+import com.imooc.enums.OrderStatusEnum;
+import com.imooc.utils.EnumUtil;
 import org.junit.Test;
+import org.springframework.cglib.core.EmitUtils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +13,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Topic1 {
+
+    @Test
+    public void enumTest() {
+        OrderStatusEnum byCode = EnumUtil.getByCode(1, OrderStatusEnum.class);
+        System.out.println(byCode);
+    }
 
     @Test
     public void test() {
